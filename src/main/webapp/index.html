@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="twitterly">
+<head>
+<title>Twitter</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="./index.css">
+
+    <base href="/twitterly/" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+    <script src="./bower_components/angular-bcrypt/dist/dtrw.bcrypt.js"></script>
+
+    <script src="./app/access/access.module.js"></script>
+    <script src="./app/access/access.config.js"></script>
+    <script src="./app/access/access.routes.js"></script>
+    <script src="./app/access/access.service.js"></script>
+    <script src="./app/access/login.controller.js"></script>
+
+    <script src="./app/stream/stream.module.js"></script>
+    <script src="./app/stream/stream.config.js"></script>
+    <script src="./app/stream/stream.routes.js"></script>
+    <script src="./app/stream/stream.service.js"></script>
+    <script src="./app/stream/global-tweet-stream.controller.js"></script>
+    <script src="./app/stream/home-tweet-stream.controller.js"></script>
+    <script src="./app/stream/user-tweet-stream.controller.js"></script>
+
+<!--    <script src="./app/appBar/appBar.module.js"></script>
+    <script src="./app/appBar/appBar.config.js"></script>
+    <script src="./app/appBar/appBar.routes.js"></script>
+    <script src="./app/appBar/appBar.service.js"></script>
+    <script src="./app/appBar/appBar.controller.js"></script> -->
+
+    <script src="./app/app.module.js"></script>
+    <script src="./app/app.config.js"></script>
+    <script src="./app/app.run.js"></script>
+
+</head>
+<body class="column centered" ng-cloak ui-view >
+  <div class="row">
+    <button ng-click="$appBar.goGlobal()">Global</button>
+    <button ng-click="$appBar.goHome()">Home</button>
+    <button ng-click="$appBar.goUser()">Profile</button>
+    <input id="user" type="user" ng-model="$userStream.userList.username" />
+    <button ng-click="$userStream.userList()">Go</button>
+    <button ng-click="$login.login()">Login</button>
+  </div
+</body>
+</html>

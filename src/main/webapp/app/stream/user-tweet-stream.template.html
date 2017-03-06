@@ -1,0 +1,14 @@
+<div src="appBar.template.html">
+</div>
+<h1 class="header">User Stream</h1>
+<div class="tweet-list column">
+  <div class="tweet-list-item row"
+      ng-repeat="tweet in $userStream.tweets">
+    <div>
+      {{tweet.text}}
+    </div>
+    <div>
+      {{tweet.tweetTime | date : 'medium'}}
+    </div>
+  </div>
+</div>
